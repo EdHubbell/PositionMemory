@@ -23,6 +23,8 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnGotoClearance = New System.Windows.Forms.Button()
+        Me.btnCenterOptics = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn1 = New System.Windows.Forms.Button()
         Me.btn2 = New System.Windows.Forms.Button()
@@ -58,7 +60,9 @@ Partial Class Form1
         Me.txtZo = New System.Windows.Forms.TextBox()
         Me.txtTz = New System.Windows.Forms.TextBox()
         Me.btnCenterSample = New System.Windows.Forms.Button()
-        Me.btnCenterOptics = New System.Windows.Forms.Button()
+        Me.btnGotoRandom = New System.Windows.Forms.Button()
+        Me.btnZeroTheta = New System.Windows.Forms.Button()
+        Me.btnHomeAll = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -73,7 +77,11 @@ Partial Class Form1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
-        Me.TableLayoutPanel1.Controls.Add(Me.btnCenterOptics, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnHomeAll, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnZeroTheta, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnGotoRandom, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnGotoClearance, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnCenterOptics, 0, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 5, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.btn1, 5, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.btn2, 6, 1)
@@ -108,7 +116,7 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.txtZ, 6, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.txtZo, 6, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.txtTz, 6, 8)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnCenterSample, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnCenterSample, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -126,6 +134,28 @@ Partial Class Form1
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(493, 239)
         Me.TableLayoutPanel1.TabIndex = 0
         '
+        'btnGotoClearance
+        '
+        Me.TableLayoutPanel1.SetColumnSpan(Me.btnGotoClearance, 2)
+        Me.btnGotoClearance.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnGotoClearance.Location = New System.Drawing.Point(3, 92)
+        Me.btnGotoClearance.Name = "btnGotoClearance"
+        Me.btnGotoClearance.Size = New System.Drawing.Size(116, 31)
+        Me.btnGotoClearance.TabIndex = 39
+        Me.btnGotoClearance.Text = "Goto Z Clearance"
+        Me.btnGotoClearance.UseVisualStyleBackColor = True
+        '
+        'btnCenterOptics
+        '
+        Me.TableLayoutPanel1.SetColumnSpan(Me.btnCenterOptics, 2)
+        Me.btnCenterOptics.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnCenterOptics.Location = New System.Drawing.Point(3, 55)
+        Me.btnCenterOptics.Name = "btnCenterOptics"
+        Me.btnCenterOptics.Size = New System.Drawing.Size(116, 31)
+        Me.btnCenterOptics.TabIndex = 38
+        Me.btnCenterOptics.Text = "Center Optics"
+        Me.btnCenterOptics.UseVisualStyleBackColor = True
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -140,6 +170,7 @@ Partial Class Form1
         '
         'btn1
         '
+        Me.btn1.AccessibleDescription = "1"
         Me.btn1.AutoSize = True
         Me.btn1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
@@ -154,6 +185,7 @@ Partial Class Form1
         '
         'btn2
         '
+        Me.btn2.AccessibleDescription = "1"
         Me.btn2.AutoSize = True
         Me.btn2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn2.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
@@ -168,6 +200,7 @@ Partial Class Form1
         '
         'btn3
         '
+        Me.btn3.AccessibleDescription = "1"
         Me.btn3.AutoSize = True
         Me.btn3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn3.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
@@ -182,6 +215,7 @@ Partial Class Form1
         '
         'btn4
         '
+        Me.btn4.AccessibleDescription = "1"
         Me.btn4.AutoSize = True
         Me.btn4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn4.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
@@ -196,6 +230,7 @@ Partial Class Form1
         '
         'btn5
         '
+        Me.btn5.AccessibleDescription = "1"
         Me.btn5.AutoSize = True
         Me.btn5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn5.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
@@ -210,6 +245,7 @@ Partial Class Form1
         '
         'btn6
         '
+        Me.btn6.AccessibleDescription = "1"
         Me.btn6.AutoSize = True
         Me.btn6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn6.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
@@ -224,6 +260,7 @@ Partial Class Form1
         '
         'btn7
         '
+        Me.btn7.AccessibleDescription = "1"
         Me.btn7.AutoSize = True
         Me.btn7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn7.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
@@ -238,6 +275,7 @@ Partial Class Form1
         '
         'btn8
         '
+        Me.btn8.AccessibleDescription = "1"
         Me.btn8.AutoSize = True
         Me.btn8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn8.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
@@ -252,6 +290,7 @@ Partial Class Form1
         '
         'btn9
         '
+        Me.btn9.AccessibleDescription = "1"
         Me.btn9.AutoSize = True
         Me.btn9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn9.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDark
@@ -431,106 +470,146 @@ Partial Class Form1
         '
         'txtX
         '
+        Me.txtX.AccessibleDescription = "0"
         Me.txtX.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtX.Location = New System.Drawing.Point(125, 149)
         Me.txtX.Name = "txtX"
         Me.txtX.Size = New System.Drawing.Size(55, 23)
         Me.txtX.TabIndex = 28
+        Me.txtX.Text = "0"
         Me.txtX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtXo
         '
+        Me.txtXo.AccessibleDescription = "3"
         Me.txtXo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtXo.Location = New System.Drawing.Point(125, 178)
         Me.txtXo.Name = "txtXo"
         Me.txtXo.Size = New System.Drawing.Size(55, 23)
         Me.txtXo.TabIndex = 29
+        Me.txtXo.Text = "0"
         Me.txtXo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtTx
         '
+        Me.txtTx.AccessibleDescription = "6"
         Me.txtTx.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtTx.Location = New System.Drawing.Point(125, 207)
         Me.txtTx.Name = "txtTx"
         Me.txtTx.Size = New System.Drawing.Size(55, 23)
         Me.txtTx.TabIndex = 30
+        Me.txtTx.Text = "0"
         Me.txtTx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtY
         '
+        Me.txtY.AccessibleDescription = "1"
         Me.txtY.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtY.Location = New System.Drawing.Point(247, 149)
         Me.txtY.Name = "txtY"
         Me.txtY.Size = New System.Drawing.Size(55, 23)
         Me.txtY.TabIndex = 31
+        Me.txtY.Text = "0"
         Me.txtY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtYo
         '
+        Me.txtYo.AccessibleDescription = "4"
         Me.txtYo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtYo.Location = New System.Drawing.Point(247, 178)
         Me.txtYo.Name = "txtYo"
         Me.txtYo.Size = New System.Drawing.Size(55, 23)
         Me.txtYo.TabIndex = 32
+        Me.txtYo.Text = "0"
         Me.txtYo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtTy
         '
+        Me.txtTy.AccessibleDescription = "7"
         Me.txtTy.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtTy.Location = New System.Drawing.Point(247, 207)
         Me.txtTy.Name = "txtTy"
         Me.txtTy.Size = New System.Drawing.Size(55, 23)
         Me.txtTy.TabIndex = 33
+        Me.txtTy.Text = "0"
         Me.txtTy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtZ
         '
+        Me.txtZ.AccessibleDescription = "2"
         Me.txtZ.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtZ.Location = New System.Drawing.Point(369, 149)
         Me.txtZ.Name = "txtZ"
         Me.txtZ.Size = New System.Drawing.Size(55, 23)
         Me.txtZ.TabIndex = 34
+        Me.txtZ.Text = "0"
         Me.txtZ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtZo
         '
+        Me.txtZo.AccessibleDescription = "5"
         Me.txtZo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtZo.Location = New System.Drawing.Point(369, 178)
         Me.txtZo.Name = "txtZo"
         Me.txtZo.Size = New System.Drawing.Size(55, 23)
         Me.txtZo.TabIndex = 35
+        Me.txtZo.Text = "0"
         Me.txtZo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtTz
         '
+        Me.txtTz.AccessibleDescription = "8"
         Me.txtTz.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtTz.Location = New System.Drawing.Point(369, 207)
         Me.txtTz.Name = "txtTz"
         Me.txtTz.Size = New System.Drawing.Size(55, 23)
         Me.txtTz.TabIndex = 36
+        Me.txtTz.Text = "0"
         Me.txtTz.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnCenterSample
         '
         Me.TableLayoutPanel1.SetColumnSpan(Me.btnCenterSample, 2)
         Me.btnCenterSample.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnCenterSample.Location = New System.Drawing.Point(64, 18)
+        Me.btnCenterSample.Location = New System.Drawing.Point(3, 18)
         Me.btnCenterSample.Name = "btnCenterSample"
         Me.btnCenterSample.Size = New System.Drawing.Size(116, 31)
         Me.btnCenterSample.TabIndex = 37
         Me.btnCenterSample.Text = "Center Sample"
         Me.btnCenterSample.UseVisualStyleBackColor = True
         '
-        'btnCenterOptics
+        'btnGotoRandom
         '
-        Me.TableLayoutPanel1.SetColumnSpan(Me.btnCenterOptics, 2)
-        Me.btnCenterOptics.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnCenterOptics.Location = New System.Drawing.Point(64, 55)
-        Me.btnCenterOptics.Name = "btnCenterOptics"
-        Me.btnCenterOptics.Size = New System.Drawing.Size(116, 31)
-        Me.btnCenterOptics.TabIndex = 38
-        Me.btnCenterOptics.Text = "Center Optics"
-        Me.btnCenterOptics.UseVisualStyleBackColor = True
+        Me.TableLayoutPanel1.SetColumnSpan(Me.btnGotoRandom, 2)
+        Me.btnGotoRandom.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnGotoRandom.Location = New System.Drawing.Point(125, 92)
+        Me.btnGotoRandom.Name = "btnGotoRandom"
+        Me.btnGotoRandom.Size = New System.Drawing.Size(116, 31)
+        Me.btnGotoRandom.TabIndex = 40
+        Me.btnGotoRandom.Text = "Goto Random"
+        Me.btnGotoRandom.UseVisualStyleBackColor = True
+        '
+        'btnZeroTheta
+        '
+        Me.TableLayoutPanel1.SetColumnSpan(Me.btnZeroTheta, 2)
+        Me.btnZeroTheta.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnZeroTheta.Location = New System.Drawing.Point(125, 18)
+        Me.btnZeroTheta.Name = "btnZeroTheta"
+        Me.btnZeroTheta.Size = New System.Drawing.Size(116, 31)
+        Me.btnZeroTheta.TabIndex = 41
+        Me.btnZeroTheta.Text = "Zero Theta"
+        Me.btnZeroTheta.UseVisualStyleBackColor = True
+        '
+        'btnHomeAll
+        '
+        Me.TableLayoutPanel1.SetColumnSpan(Me.btnHomeAll, 2)
+        Me.btnHomeAll.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnHomeAll.Location = New System.Drawing.Point(125, 55)
+        Me.btnHomeAll.Name = "btnHomeAll"
+        Me.btnHomeAll.Size = New System.Drawing.Size(116, 31)
+        Me.btnHomeAll.TabIndex = 42
+        Me.btnHomeAll.Text = "Home All"
+        Me.btnHomeAll.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -583,4 +662,8 @@ Partial Class Form1
     Friend WithEvents txtTz As TextBox
     Friend WithEvents btnCenterOptics As Button
     Friend WithEvents btnCenterSample As Button
+    Friend WithEvents btnGotoClearance As Button
+    Friend WithEvents btnHomeAll As Button
+    Friend WithEvents btnZeroTheta As Button
+    Friend WithEvents btnGotoRandom As Button
 End Class
