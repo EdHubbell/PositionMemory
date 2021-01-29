@@ -3,16 +3,29 @@
 Public Class Form1
     Private EditMode As Boolean = False
     Private PosMemoryPath As String = "PosMemory.txt"
+    Private PosMemorySettingsPath As String = "PosMemorySettings.xml"
     Private PosMemory(9, 9) As Double
     Private PosMemoryBtns As New List(Of Button)
     Private PosTextBoxes As New List(Of TextBox)
+
+    Private PosMemorySettings As PositionMemorySettings
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitializePosMemoryUI()
+
         If File.Exists(PosMemoryPath) Then
             LoadPosMemory()
         Else
             SavePosMemory(create:=True)
         End If
+
+        If File.Exists(PosMemorySettingsPath) Then
+            PosMemorySettings = PositionMemorySettings.Load(Of PositionMemorySettings)(PosMemorySettingsPath)
+        Else
+            PosMemorySettings = New PositionMemorySettings
+            PosMemorySettings.SaveToXMLFile(PosMemorySettingsPath)
+        End If
+
     End Sub
 
     Private Sub InitializePosMemoryUI()
@@ -54,8 +67,15 @@ Public Class Form1
         FileClose(1)
     End Sub
 
+
     Private Sub ClickButton(sender As Button, e As MouseEventArgs)
-        Dim MemoryIdx As Integer = CInt(sender.Name.Replace("btn", "")) - 1 ' Get array idx from btn name
+        'Dim MemoryIdx As Integer = CInt(sender.Name.Replace("btn", "")) - 1 ' Get array idx from btn name
+
+        ' A trick I've used here - You could also do this with a tag value on the control, like so:
+        ' This is more for future reference when you need to tie a control to some kind of in-code index. These buttons are low risk for renaming, as it's pretty much 1 thru 9. I'd keep what you have in place.  
+        Dim MemoryIdx As Integer = CInt(sender.Tag) - 1 ' Get array idx from tag
+
+
         With sender.FlatAppearance ' This color defines the logic
             If .BorderColor <> Color.Gold And EditMode Then Exit Sub ' Cannot be editing more than one pos at once
             Select Case e.Button
@@ -66,10 +86,14 @@ Public Class Form1
                             EditMode = True
                         Case Color.Gold ' Finish edit (Store and save values)
                             For Each txt As TextBox In PosTextBoxes
-                                If txt.BackColor = Color.Gold Then PosMemory(MemoryIdx, txt.AccessibleDescription) = CDbl(txt.Text)
+                                If txt.BackColor = Color.Gold Then
+                                    PosMemory(MemoryIdx, txt.AccessibleDescription) = CDbl(txt.Text)
+
+                                End If
                                 txt.BackColor = SystemColors.Control
                             Next
                             SavePosMemory()
+                            PosMemorySettings.SaveToXMLFile(PosMemorySettingsPath)
                             .BorderColor = Color.LawnGreen
                             EditMode = False
                     End Select
@@ -81,6 +105,7 @@ Public Class Form1
                     Next
                     .BorderColor = SystemColors.ControlDark
                     SavePosMemory()
+                    PosMemorySettings.SaveToXMLFile(PosMemorySettingsPath)
                 Case MouseButtons.Left
                     If .BorderColor <> Color.LawnGreen Then Exit Sub ' Do nothing if there is no saved pos
                     Dim confirm = MsgBox("Confirm Move to Memory Pos " & (MemoryIdx + 1).ToString(), vbYesNo, "Goto Memory Position")

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repos\\PositionMemory\\PositionMemory\\PositionMemory.vbproj": {}
+    "C:\\Development\\Github\\PositionMemory\\PositionMemory\\PositionMemory.vbproj": {}
   },
   "projects": {
-    "C:\\Repos\\PositionMemory\\PositionMemory\\PositionMemory.vbproj": {
+    "C:\\Development\\Github\\PositionMemory\\PositionMemory\\PositionMemory.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\PositionMemory\\PositionMemory\\PositionMemory.vbproj",
+        "projectUniqueName": "C:\\Development\\Github\\PositionMemory\\PositionMemory\\PositionMemory.vbproj",
         "projectName": "PositionMemory",
-        "projectPath": "C:\\Repos\\PositionMemory\\PositionMemory\\PositionMemory.vbproj",
-        "packagesPath": "C:\\Users\\dingo\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\PositionMemory\\PositionMemory\\obj\\",
+        "projectPath": "C:\\Development\\Github\\PositionMemory\\PositionMemory\\PositionMemory.vbproj",
+        "packagesPath": "C:\\Users\\ed\\.nuget\\packages\\",
+        "outputPath": "C:\\Development\\Github\\PositionMemory\\PositionMemory\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dingo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
